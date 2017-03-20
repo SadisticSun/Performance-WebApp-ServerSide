@@ -1,0 +1,16 @@
+{
+  "name": "webapp-serverside",
+  "version": "1.0.0",
+  "description": "Web App From Scratch refactored to render on the server side.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tristan Jacobs",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.15.2",
+    "node-sass": "^4.5.0",
+    "node-sass-middleware": "^0.11.0"
+  }
+}
