@@ -14,7 +14,17 @@
     </div>
     <hr>
 
-    <% include partials/searchresults%>
+    <p><%= qs.query %></p>
+
+    <% if (urls) { %>
+    <div id="searchresults">
+            <% urls.forEach(function (img_url) { %>
+                <img src="<%=img_url%>" alt="Powered By Giphy!">
+            <%})%>
+    </div>
+    <% }%>
+
+
 
 </section>
 

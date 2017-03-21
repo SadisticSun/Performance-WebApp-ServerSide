@@ -10,25 +10,30 @@ const APIconfig = {
     LIMIT: 25
 };
 
-function doApiCall(query, key, limit) {
+// function load(query, callback) {
+//     var url = 'https://api.giphy.com/v1/gifs/search?q=' + query + '&api_key=' + APIconfig.KEY + '&limit=' + APIconfig.LIMIT;
+//     request(url, function (err, res, body) {
+//         callback(JSON.parse(body));
+//     })
+// }
+
+function doApiCall(query, key, limit, callback) {
 
     var url = 'https://api.giphy.com/v1/gifs/search?q=' + query + '&api_key=' + key + '&limit=' + limit;
-    console.log(url);
+    console.log("URL is: " + url);
 
     request(url, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var parsedData = JSON.parse(body);
-            parsedData.data.forEach(function (obj) {
-                console.log(obj.url);
-            })
-        } else {
-            console.log('Er ging iets mis met het ophalen van de data uit de API...')
-        }
+        var parsedData = JSON.parse(body);
+        var urls = [];
+        parsedData.data.forEach(function (obj) {
+            urls.push(obj.images.fixed_height.url);
+        });
+        callback(urls);
+        console.log(urls);
     });
 }
 
 app.use(urlencodedParser);
-// app.use(bodyParser.json());
 
 app.set('view engine', 'ejs');
 
@@ -43,14 +48,15 @@ app.get('/about', function (req, res) {
 });
 
 app.get('/search', function (req, res) {
-    res.render('search', {qs: req.query});
+    res.render('search', {qs: req.query, urls: []});
 });
 
 app.post('/search', urlencodedParser, function(req, res) {
     var userQuery = req.body.query;
     console.log(req.body.query);
-    res.render('search', {qs: req.body});
-    doApiCall(userQuery, APIconfig.KEY, APIconfig.LIMIT);
+    doApiCall(userQuery, APIconfig.KEY, APIconfig.LIMIT, function (urls) {
+        res.render('search', {qs: req.body, urls: urls})
+    });
 
 });
 

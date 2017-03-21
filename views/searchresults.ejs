@@ -1,0 +1,15 @@
+<% include partials/head %>
+<% include partials/header %>
+
+
+<body>
+
+<% properties.Objects.forEach(function(property){ %>
+    <p><%= property.url %></p>
+<% })%>
+
+
+
+</body>
+
+<% include partials/footer %>
