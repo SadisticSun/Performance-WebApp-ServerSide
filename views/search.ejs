@@ -6,10 +6,11 @@
     <h1>Zoek GIFs</h1>
 
     <div>
-        <form action="">
-            <input type="text" required placeholder="Zoek GIFs op Gyphy...">
-            <button type="submit">Zoeken</button>
+        <form id="search-form" method="POST" action="/search">
+            <input id="input" name="query" type="text" value="<%= qs.query %>" required placeholder="Zoek GIFs op Gyphy...">
+            <input id="search" type="submit" value="Zoeken"></input>
         </form>
+
     </div>
     <hr>
 

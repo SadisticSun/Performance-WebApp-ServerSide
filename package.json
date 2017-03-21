@@ -9,8 +9,10 @@
   "author": "Tristan Jacobs",
   "license": "MIT",
   "devDependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "node-sass": "^4.5.0",
-    "node-sass-middleware": "^0.11.0"
+    "node-sass-middleware": "^0.11.0",
+    "request": "^2.81.0"
   }
 }
