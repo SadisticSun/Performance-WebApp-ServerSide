@@ -18,7 +18,6 @@
     "node-sass": "^4.5.0",
     "node-sass-middleware": "^0.11.0",
     "request": "^2.81.0",
-    "uglify-js": "^2.8.15",
     "watchify": "^3.9.0"
   }
 }
