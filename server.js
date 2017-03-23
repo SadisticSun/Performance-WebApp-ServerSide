@@ -7,7 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const APIconfig = {
     KEY: 'dc6zaTOxFJmzC',
-    LIMIT: 10
+    LIMIT: 20
 };
 
 app.use(urlencodedParser);

@@ -16,7 +16,14 @@
     <hr>
 
     <% if (items) { %>
-        <p>Search results:</p>
+        <div id="result-bar">
+            <p>Search results:</p>
+            <div id="sort-icons">
+                <p>Display style:</p>
+                <a href="#"><i id="grid-icon" class="fa fa-th-large active" aria-hidden="true"></i></a>
+                <a href="#"><i id="row-icon" class="fa fa-bars" aria-hidden="true"></i></a>
+            </div>
+        </div>
         <div id="searchresults">
                 <% items.forEach(function (item) { %>
                     <a href="/details/<%=item.id%>">
@@ -31,3 +38,5 @@
 
 
 </section>
+
+<% include partials/footer %>
