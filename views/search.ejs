@@ -12,6 +12,7 @@
         </form>
 
     </div>
+
     <hr>
 
     <% if (items) { %>
@@ -20,7 +21,7 @@
                 <% items.forEach(function (item) { %>
                     <a href="/details/<%=item.id%>">
                         <!--<img src="<%=item.images.fixed_height.url%>" alt="Powered By Giphy!">-->
-                        <video autoplay="autoplay" loop="loop" width="400" height="300">
+                        <video autoplay="autoplay" loop="loop">
                             <source src="<%= item.images.fixed_height.mp4%>" type="video/mp4" />
                         </video>
                     </a>

@@ -7,7 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const APIconfig = {
     KEY: 'dc6zaTOxFJmzC',
-    LIMIT: 4
+    LIMIT: 10
 };
 
 app.use(urlencodedParser);
@@ -20,9 +20,6 @@ app.get('/', function (req, res) {
     res.render('index')
 });
 
-app.get('/about', function (req, res) {
-    res.render('about')
-});
 
 app.get('/search', function (req, res) {
     var data = {};
@@ -55,8 +52,8 @@ app.get('/details/:id', function (req, res) {
 });
 
 
-app.listen(3000, function () {
-    console.log('App listening on: http://localhost:3000')
+app.listen(8080, function () {
+    console.log('App listening on: http://localhost:8080')
 });
 
 

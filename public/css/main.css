@@ -29,6 +29,7 @@ nav ul li {
 }
 
 nav ul li a {
+    transition: 0.2s;
     color: white;
     margin-left: -2em;
     padding: 1em;
@@ -36,6 +37,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+    transition: 0.2s;
     background: white;
     color: crimson;
 }
@@ -64,7 +66,8 @@ input:focus {
     text-transform: uppercase;
 }
 
-#search:hover {
+#search:hover,
+#search:focus {
     cursor: pointer;
     transition: 0.2s;
     background-color: crimson;
@@ -77,6 +80,10 @@ section {
     padding: 2em;
 }
 
+[name="search"] div:first-of-type {
+    margin-bottom: 1em;
+}
+
 [name="about"] p {
     max-width: 40em;
 }
@@ -84,19 +91,34 @@ section {
 #searchresults {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+}
 
+#searchresults video {
+    max-width: 25em;
+}
+
+#detailpage {
+    display: flex;
+    padding: 3em;
+    justify-content: center;
+}
+
+#detailpage a {
+    display: block;
+    padding: 1em;
+    background-color: cornflowerblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.2em;
+    margin: 0 2em 0 0;
+}
+#detailpage a:focus,
+#detailpage a:hover {
+    background-color: dodgerblue;
+}
+#detailpage img {
+    height: 30em;
 }
 
 /* Footer */
-
-footer {
-
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 0.5em;
-    font-size: smaller;
-    background-color: #333;
-    color: white;
-    text-align: center;
-}
