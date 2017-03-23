@@ -40,6 +40,37 @@ nav ul li a:hover {
     color: crimson;
 }
 
+/* Form */
+form {
+    display: flex;
+}
+
+input:focus {
+    outline: 2px solid crimson
+}
+
+#input {
+    padding: 1em;
+    color: #333;
+    font-size: medium;
+}
+
+#search {
+    transition: 0.2s;
+    -webkit-appearance: none;
+    padding: 0 2em;
+    background: none;
+    border: 1px solid lightgrey;
+    text-transform: uppercase;
+}
+
+#search:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: crimson;
+    color: white;
+}
+
 /* Sections */
 
 section {
@@ -50,16 +81,16 @@ section {
     max-width: 40em;
 }
 
-#search-results {
+#searchresults {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+
 }
 
 /* Footer */
 
 footer {
-    position: absolute;
+
     right: 0;
     bottom: 0;
     left: 0;

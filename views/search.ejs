@@ -3,29 +3,30 @@
 
 <section name="search">
 
-    <h1>Zoek GIFs</h1>
+    <h1>Search GIFs</h1>
 
     <div>
         <form id="search-form" method="POST" action="/search">
-            <input id="input" name="query" type="text" value="<%= qs.query %>" required placeholder="Zoek GIFs op Gyphy...">
-            <input id="search" type="submit" value="Zoeken"></input>
+            <input id="input" name="query" type="text" value="<%= user_query.query %>" required placeholder="Search GIFs on Gyphy...">
+            <input id="search" type="submit" value="Search"></input>
         </form>
 
     </div>
     <hr>
 
-    <p><%= qs.query %></p>
-
-    <% if (urls) { %>
-    <div id="searchresults">
-            <% urls.forEach(function (img_url) { %>
-                <img src="<%=img_url%>" alt="Powered By Giphy!">
-            <%})%>
-    </div>
+    <% if (items) { %>
+        <p>Search results:</p>
+        <div id="searchresults">
+                <% items.forEach(function (item) { %>
+                    <a href="/details/<%=item.id%>">
+                        <!--<img src="<%=item.images.fixed_height.url%>" alt="Powered By Giphy!">-->
+                        <video autoplay="autoplay" loop="loop" width="400" height="300">
+                            <source src="<%= item.images.fixed_height.mp4%>" type="video/mp4" />
+                        </video>
+                    </a>
+                <%})%>
+        </div>
     <% }%>
 
 
-
 </section>
-
-<% include partials/footer %>
