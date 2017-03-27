@@ -9,6 +9,8 @@ const APIconfig = {
     KEY: 'dc6zaTOxFJmzC',
     LIMIT: 20
 };
+
+app.set('port', (process.env.PORT || 8080));
 app.use(urlencodedParser);
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -39,7 +41,7 @@ app.get('/details/:id', function(req, res) {
         single_img_url: 'https://media4.giphy.com/media/' + req.params.id + '/200.gif'
     });
 });
-app.listen(8080, function() {
+app.listen(app.get('port'), function() {
     console.log('App listening on: http://localhost:8080')
 });
 
