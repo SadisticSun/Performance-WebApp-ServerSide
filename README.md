@@ -1,7 +1,15 @@
 # Performance Matters - Server Side Rendered Web App
 
-## About
-Refactored version of the Web App From Scratch app to server side rendered version.
+## About this repo
+Refactored version of the Web App From Scratch app to a server side rendered version in Node.js.
+
+## Dependency List
+* Body Parser
+* Browserify
+* EJS
+* Express
+* Request
+* Watchify
 
 ## Usage
 
@@ -15,9 +23,20 @@ npm install
 ```
 3. Run app with
 ```
-node app.js
+node server.js
 ```
+or, if you use Nodemon:
+```
+nodemon server.js
+```
+
 4. Test app at:
 ```
 http://localhost:3000
+```
+
+Extra scripts:
+```
+npm build
+npm watch
 ```
