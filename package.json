@@ -22,6 +22,11 @@
     "body-parser": "^1.17.1",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
+<<<<<<< HEAD
     "request": "^2.81.0"
+=======
+    "request": "^2.81.0",
+    "watchify": "^3.9.0"
+>>>>>>> master
   }
 }
