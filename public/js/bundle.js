@@ -1,7 +1,6 @@
 
 (function(){
     "use strict";
-    console.log('another build..');
 
     var utils = {
         $: function(id) {
