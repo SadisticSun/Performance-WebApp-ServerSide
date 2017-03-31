@@ -1,4 +1,5 @@
 var express = require('express');
+var compression = require('compression');
 var request = require('request');
 var bodyParser = require('body-parser');
 var app = express();
@@ -13,6 +14,7 @@ var APIconfig = {
 app.set('port', (process.env.PORT || 8080));
 app.use(urlencodedParser);
 app.set('view engine', 'ejs');
+app.use(compression());
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
