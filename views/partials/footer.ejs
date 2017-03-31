@@ -2,6 +2,12 @@
         <p>Copyright 2017 - Tristan Jacobs</p>
     </footer>
 
+    <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../sw.js');
+    };
+    </script>
+    
     <script type="text/javascript" src="/js/bundle.js"></script>
 </body>
 </html>

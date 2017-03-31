@@ -1,11 +1,11 @@
-const express = require('express');
-const request = require('request');
-const bodyParser = require('body-parser');
-const app = express();
-const urlencodedParser = bodyParser.urlencoded({
+var express = require('express');
+var request = require('request');
+var bodyParser = require('body-parser');
+var app = express();
+var urlencodedParser = bodyParser.urlencoded({
     extended: false
 });
-const APIconfig = {
+var APIconfig = {
     KEY: 'dc6zaTOxFJmzC',
     LIMIT: 20
 };
@@ -14,9 +14,11 @@ app.set('port', (process.env.PORT || 8080));
 app.use(urlencodedParser);
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
 app.get('/', function(req, res) {
-    res.render('index')
+    res.render('index');
 });
+
 app.get('/search', function(req, res) {
     var data = {};
     res.render('search', {
@@ -24,7 +26,9 @@ app.get('/search', function(req, res) {
         items: null
     });
 });
+
 objects = [];
+
 app.post('/search', urlencodedParser, function(req, res) {
     var userQuery = req.body.query;
     doApiCall(userQuery, APIconfig.KEY, APIconfig.LIMIT, function(data) {
@@ -36,13 +40,15 @@ app.post('/search', urlencodedParser, function(req, res) {
         });
     });
 });
+
 app.get('/details/:id', function(req, res) {
     res.render('details', {
         single_img_url: 'https://media4.giphy.com/media/' + req.params.id + '/200.gif'
     });
 });
+
 app.listen(app.get('port'), function() {
-    console.log('App listening on: http://localhost:8080')
+    console.log('App listening on: http://localhost:8080');
 });
 
 function doApiCall(query, key, limit, callback) {
@@ -50,6 +56,6 @@ function doApiCall(query, key, limit, callback) {
     console.log("URL is: " + url);
     request(url, function(error, response, body) {
         var parsedData = JSON.parse(body);
-        callback(parsedData)
+        callback(parsedData);
     });
 }
