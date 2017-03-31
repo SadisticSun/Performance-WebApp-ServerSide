@@ -8,7 +8,6 @@
       var sheets = window.document.styleSheets;
       ss.rel =  'stylesheet';
       ss.href = href;
-      ss.media = 'only x';
       ref.parentNode.insertBefore(ss, ref);
       function toggleMedia() {
           var defined;
@@ -27,7 +26,8 @@
       toggleMedia();
       return ss;
     };
-    loadCSS( "./css/main.css" );
+    var stylesheet = loadCSS( "./css/main.css" );
+    console.log(stylesheet);
 
     var utils = {
         $: function(id) {
