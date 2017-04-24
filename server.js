@@ -1,9 +1,9 @@
-var express = require('express');
-var compression = require('compression');
-var request = require('request');
-var bodyParser = require('body-parser');
-var app = express();
-var urlencodedParser = bodyParser.urlencoded({
+var express          = require('express'),
+    compression      = require('compression'),
+    request          = require('request'),
+    bodyParser       = require('body-parser'),
+    app              = express(),
+    urlencodedParser = bodyParser.urlencoded({
     extended: false
 });
 var APIconfig = {
